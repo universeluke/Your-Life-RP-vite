@@ -36,7 +36,7 @@ const stats = [
 
 const Community: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
+  hoveredIndex;
   return (
     <section id="community" className="community-section">
       <div className="background-overlay"></div>

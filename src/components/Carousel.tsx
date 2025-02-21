@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Carousel.css";
 
 interface Card {
@@ -11,7 +11,7 @@ const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [rotationDirection, setRotationDirection] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-
+  rotationDirection;
   const cards: Card[] = [
     { title: "Card 1", color: "#FF6B6B", content: "Some content here" },
     { title: "Card 2", color: "#4ECDC4", content: "Another description" },
