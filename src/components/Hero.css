@@ -1,0 +1,130 @@
+/* Hero.css */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 0; /* Remove any top margin */
+}
+
+/* Parallax Background */
+.parallax-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("/gta.jpg");
+  background-position: center;
+  background-size: cover;
+  filter: brightness(0.6);
+  will-change: transform;
+}
+
+/* Parallax Foreground */
+.parallax-foreground {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  will-change: transform;
+  transform: scale(1); /* Make the container slightly bigger */
+}
+
+/* Ensure the foreground image covers the full width */
+.parallax-foreground img {
+  width: 110vw !important; /* Make image wider than viewport */
+  height: auto !important;
+  position: absolute !important;
+  bottom: 0% !important; /* Move it down slightly */
+  left: -5.5% !important; /* Center the wider image */
+  object-fit: cover !important;
+  object-position: bottom !important;
+  transform: scale(1);
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  padding-bottom: 200px;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Title Styles */
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 16rem;
+  background-clip: text;
+  color: aliceblue;
+  animation: pulse 10s infinite;
+  text-shadow: 0 0 10px rgba(154, 160, 183, 0.7);
+  -webkit-background-clip: text;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Subtitle Styles */
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #d1d5db;
+}
+
+/* Call to Action Button */
+.cta-button {
+  background: linear-gradient(to top, #004bad, #5cdee5);
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  bottom: 0% !important;
+}
+
+.cta-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.5);
+}
+
+/* Animation on Hover */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.cta-button:hover {
+  animation: float 1s ease-in-out infinite;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}

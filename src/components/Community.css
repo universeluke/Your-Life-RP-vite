@@ -1,0 +1,126 @@
+/* Community.css */
+
+/* General Section Styles */
+.community-section {
+  padding: 5rem 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.background-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.2;
+  background-image: url("/placeholder.svg?height=1080&width=1920");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.community-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(to right, #1e40af, #7c3aed);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Stat Card Styles */
+.stat-card {
+  background-color: rgba(31, 41, 55, 0.5);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.stat-card:hover {
+  background-color: rgba(31, 41, 55, 0.7);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+}
+
+.stat-icon {
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+  transform: scale(1.1) rotate(6deg);
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #3b82f6; /* Default blue */
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.stat-card:hover .stat-value {
+  color: #93c5fd; /* Light blue */
+}
+
+.stat-label {
+  font-size: 1.125rem;
+  color: #d1d5db; /* Gray */
+  transition: color 0.3s ease;
+}
+
+.stat-card:hover .stat-label {
+  color: #e5e7eb; /* Lighter gray */
+}
+
+/* Hover Text Styles */
+.hover-text {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #93c5fd; /* Light blue */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

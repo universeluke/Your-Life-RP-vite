@@ -1,0 +1,162 @@
+.showcase-container {
+  width: 100%;
+  min-height: 60vh;
+  background: linear-gradient(to right, #122250, #351052, #122250);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.showcase-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+.carousel-container {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-stage {
+  width: 800px;
+  height: 400px;
+  position: relative;
+  perspective: 3000px;
+}
+
+.carousel-stage::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(124, 58, 237, 0.1) 0%,
+    rgba(30, 64, 175, 0.1) 50%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  transform: scale(1.5);
+  z-index: -1;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(1.5);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.7);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1.5);
+  }
+}
+
+.carousel-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: translateZ(-300px);
+}
+
+.carousel-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 50%;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  transition: all 0.5s ease-out;
+}
+
+.card {
+  width: 256px;
+  height: 320px;
+  position: relative;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.card-header {
+  height: 96px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 24px;
+}
+
+.card-body h3 {
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-body p {
+  margin: 0;
+  color: #666;
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 64px;
+  opacity: 0.8;
+}
+
+.nav-button {
+  position: relative;
+  font-size: 32px;
+  padding: 16px 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-button:hover {
+  color: #f87171;
+}
+
+.nav-left {
+  left: 32px;
+}
+
+.nav-right {
+  right: 32px;
+}
+
+.nav-button:focus {
+  outline: none;
+}
+
+.nav-button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
