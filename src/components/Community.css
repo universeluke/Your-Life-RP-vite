@@ -3,7 +3,7 @@
 /* General Section Styles */
 .community-section {
   padding: 5rem 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background: linear-gradient(to right, #000000, #0c0b25, #000000);
   position: relative;
 }
 
@@ -30,10 +30,8 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 3rem;
-  background: linear-gradient(to right, #1e40af, #7c3aed);
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  color: white;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
 
 .stats-grid {

@@ -84,7 +84,8 @@
 
 /* Call to Action Button */
 .cta-button {
-  background: linear-gradient(to top, #004bad, #5cdee5);
+  background-color: rgba(92, 154, 225, 0.223);
+  border: solid white, px;
   color: white;
   font-weight: bold;
   padding: 1rem 2.5rem;
@@ -94,12 +95,11 @@
   display: inline-block;
   text-decoration: none;
   bottom: 0% !important;
-  opacity: 80%;
 }
 
 .cta-button:hover {
-  transform: scale(1.02);
-  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.5);
+  transform: scale(1.03);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* Animation on Hover */

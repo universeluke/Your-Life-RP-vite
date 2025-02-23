@@ -1,23 +1,44 @@
+// Carousel.tsx
 import { useState } from "react";
 import "./Carousel.css";
 
 interface Card {
+  src: string;
   title: string;
-  color: string;
-  content: string;
+  description: string;
 }
 
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [rotationDirection, setRotationDirection] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  rotationDirection;
+
   const cards: Card[] = [
-    { title: "Card 1", color: "#FF6B6B", content: "Some content here" },
-    { title: "Card 2", color: "#4ECDC4", content: "Another description" },
-    { title: "Card 3", color: "#45B7D1", content: "More details" },
-    { title: "Card 4", color: "#96CEB4", content: "Extra information" },
-    { title: "Card 5", color: "#FFEEAD", content: "Final card" },
+    {
+      src: "/princessbike.jpeg",
+      title: "Princess Bike",
+      description: "Customized for high-speed pursuit",
+    },
+    {
+      src: "/michael.png",
+      title: "Michael",
+      description: "Retired bank robber turned mentor",
+    },
+    {
+      src: "/trevor.png",
+      title: "Trevor",
+      description: "Unpredictable force of chaos",
+    },
+    {
+      src: "/trevortwo.png",
+      title: "Trevor's Empire",
+      description: "Building a criminal enterprise",
+    },
+    {
+      src: "/trevorthree.png",
+      title: "Trevor's Madness",
+      description: "Mayhem in Los Santos",
+    },
   ];
 
   const rotateLeft = () => {
@@ -63,6 +84,7 @@ const Carousel = () => {
       x: radius * Math.sin(theta),
       z: radius * Math.cos(theta) - radius,
       rotateY: (theta * 180) / Math.PI,
+      isActive: adjustedIndex === 0,
     };
   };
 
@@ -77,32 +99,49 @@ const Carousel = () => {
         <div className="carousel-stage">
           <div className="carousel-wrapper">
             {cards.map((card, index) => {
-              const { x, z, rotateY } = calculateCardPosition(index);
+              const { x, z, rotateY, isActive } = calculateCardPosition(index);
               const scale = ((z + 300) / 300) * 0.5 + 0.5;
 
               return (
                 <div
                   key={index}
-                  className="carousel-card"
+                  className={`carousel-card ${isActive ? "active" : ""}`}
                   style={{
                     transform: `translate3d(${x}px, 0, ${z}px) rotateY(${rotateY}deg)`,
                     opacity: scale,
                     zIndex: Math.round(scale * 100),
                   }}
                 >
-                  <div className="card">
+                  <div className="card-container">
                     <div
-                      className="card-header"
-                      style={{ backgroundColor: card.color }}
-                    />
-                    <div className="card-body">
-                      <h3>{card.title}</h3>
-                      <p>{card.content}</p>
+                      className="card"
+                      onMouseEnter={() => {
+                        if (isActive) {
+                          const cardElement = document.querySelector(
+                            `.carousel-card.active`
+                          );
+                          cardElement?.classList.add("hovered");
+                        }
+                      }}
+                      onMouseLeave={() => {
+                        const cardElement = document.querySelector(
+                          `.carousel-card.active`
+                        );
+                        cardElement?.classList.remove("hovered");
+                      }}
+                    >
+                      <img
+                        src={card.src}
+                        className="card-image"
+                        alt={card.title}
+                      />
                     </div>
-                    <div
-                      className="card-footer"
-                      style={{ backgroundColor: card.color }}
-                    />
+                    {isActive && (
+                      <div className="card-overlay">
+                        <h3 className="card-title">{card.title}</h3>
+                        <p className="card-description">{card.description}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               );

@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
           Experience the most intense GTA FiveM roleplay server
         </p>
         <a href="#join" className="cta-button">
-          Start Your New Life
+          Start your new life
         </a>
       </div>
     </section>

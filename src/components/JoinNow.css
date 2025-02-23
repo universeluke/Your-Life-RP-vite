@@ -36,18 +36,6 @@
 }
 
 /* Call to Action Button */
-.cta-button {
-  background: linear-gradient(to top, #014bad, #5cdfe5);
-  color: white;
-  font-weight: bold;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-size: 1.25rem;
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
 /* Arrow Icon Styles */
 .arrow-icon {
