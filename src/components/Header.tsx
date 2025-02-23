@@ -12,8 +12,8 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const leftNavItems = ["Features", "Showcase"];
-  const rightNavItems = ["Community", "Join"];
+  const leftNavItems = ["FEATURES", "SHOWCASE"];
+  const rightNavItems = ["COMMUNITY", "CONNECT"];
 
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>

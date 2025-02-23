@@ -1,7 +1,7 @@
 .showcase-container {
   width: 100%;
   min-height: 60vh;
-  background: linear-gradient(to right, #122250, #351052, #122250);
+  background: linear-gradient(to right, #123a50, #140e49, #0d1a3e);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -141,7 +141,7 @@
 }
 
 .nav-button:hover {
-  color: #f87171;
+  color: #5fb0e7;
 }
 
 .nav-left {
