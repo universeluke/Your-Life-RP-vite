@@ -13,6 +13,9 @@ const Carousel = () => {
   const [rotationDirection, setRotationDirection] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  // delcaring the state so that vercel builds it without getting angry at me :))
+  rotationDirection;
+
   const cards: Card[] = [
     {
       src: "/princessbike.jpeg",
