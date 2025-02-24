@@ -6,6 +6,7 @@ interface Card {
   src: string;
   title: string;
   description: string;
+  img: string;
 }
 
 const Carousel = () => {
@@ -18,29 +19,34 @@ const Carousel = () => {
 
   const cards: Card[] = [
     {
-      src: "/princessbike.jpeg",
+      src: "/background1.png",
       title: "Princess Bike",
       description: "Customized for high-speed pursuit",
+      img: "/femalechar.png",
     },
     {
-      src: "/michael.png",
-      title: "Michael",
-      description: "Retired bank robber turned mentor",
+      src: "/background2.png",
+      title: "Gang vs. PD",
+      description: "Take on the cops",
+      img: "/malechar.png",
     },
     {
-      src: "/trevor.png",
+      src: "/background3.png",
       title: "Trevor",
       description: "Unpredictable force of chaos",
+      img: "/malechar2.png",
     },
     {
-      src: "/trevortwo.png",
+      src: "/background4.png",
       title: "Trevor's Empire",
       description: "Building a criminal enterprise",
+      img: "/malechar3.png",
     },
     {
-      src: "/trevorthree.png",
+      src: "/background5.png",
       title: "Trevor's Madness",
       description: "Mayhem in Los Santos",
+      img: "/hazmatchar.png",
     },
   ];
 
@@ -115,24 +121,27 @@ const Carousel = () => {
                     zIndex: Math.round(scale * 100),
                   }}
                 >
-                  <div className="card-container">
-                    <div
-                      className="card"
-                      onMouseEnter={() => {
-                        if (isActive) {
-                          const cardElement = document.querySelector(
-                            `.carousel-card.active`
-                          );
-                          cardElement?.classList.add("hovered");
-                        }
-                      }}
-                      onMouseLeave={() => {
+                  <div
+                    className="card-container"
+                    onMouseEnter={() => {
+                      if (isActive) {
                         const cardElement = document.querySelector(
                           `.carousel-card.active`
                         );
-                        cardElement?.classList.remove("hovered");
-                      }}
-                    >
+                        cardElement?.classList.add("hovered");
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      const cardElement = document.querySelector(
+                        `.carousel-card.active`
+                      );
+                      cardElement?.classList.remove("hovered");
+                    }}
+                  >
+                    <h3 className={`carousel-text ${isActive ? "active" : ""}`}>
+                      {card.title}
+                    </h3>
+                    <div className="card">
                       <img
                         src={card.src}
                         className="card-image"
@@ -141,8 +150,9 @@ const Carousel = () => {
                     </div>
                     {isActive && (
                       <div className="card-overlay">
-                        <h3 className="card-title">{card.title}</h3>
-                        <p className="card-description">{card.description}</p>
+                        <div className="card-overlay-inside">
+                          <img className="card-img" src={card.img}></img>
+                        </div>
                       </div>
                     )}
                   </div>
