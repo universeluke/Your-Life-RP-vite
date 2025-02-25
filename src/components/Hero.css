@@ -58,12 +58,12 @@
   margin-top: 16rem;
   background-clip: text;
   color: aliceblue;
-  animation: pulse 10s infinite;
+  animation: pulsesmall 10s infinite;
   text-shadow: 0 0 10px rgba(154, 160, 183, 0.7);
   -webkit-background-clip: text;
 }
 
-@keyframes pulse {
+@keyframes pulsesmall {
   0% {
     transform: scale(1);
   }

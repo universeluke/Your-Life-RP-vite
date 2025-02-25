@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   MessageSquare,
   ThumbsUp,
@@ -35,8 +35,6 @@ const stats = [
 ];
 
 const Community: React.FC = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  hoveredIndex;
   return (
     <section id="community" className="community-section">
       <div className="background-overlay"></div>
@@ -44,12 +42,7 @@ const Community: React.FC = () => {
         <h2 className="community-title">Our Thriving Community</h2>
         <div className="stats-grid">
           {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="stat-card"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
+            <div key={index} className="stat-card">
               <div className="stat-icon">{stat.icon}</div>
               <h3 className="stat-value">{stat.value}</h3>
               <p className="stat-label">{stat.label}</p>

@@ -5,6 +5,7 @@ import Community from "./components/Community";
 import JoinNow from "./components/JoinNow";
 import Footer from "./components/Footer";
 import Carousel from "./components/Carousel";
+import ScrollingImageBelt from "./components/ScrollingImageBelt";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Hero />
       <Features />
       <Carousel />
+      <ScrollingImageBelt />
       <Community />
       <JoinNow />
       <Footer />

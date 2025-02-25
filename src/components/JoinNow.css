@@ -3,14 +3,13 @@
 /* Section Styles */
 .join-section {
   padding: 5rem 0;
-  background: linear-gradient(to right, #1e3a8a, #6b21a8);
+  background: linear-gradient(to right, #000000, rgb(17, 27, 59), #000000);
   position: relative;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
 }
 
 .container {

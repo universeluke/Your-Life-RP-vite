@@ -3,8 +3,10 @@
 /* General Section Styles */
 .community-section {
   padding: 5rem 0;
-  background: linear-gradient(to right, #000000, #0c0b25, #000000);
+  background: linear-gradient(to right, #000000, rgb(17, 27, 59), #000000);
   position: relative;
+  padding-top: 140px;
+  padding-bottom: 140px;
 }
 
 .background-overlay {
