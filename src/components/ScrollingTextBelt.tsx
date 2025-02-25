@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./ScrollingImageBelt.css";
+import "./ScrollingTextBelt.css";
 
 interface ImageItem {
   id: number;
-  src: string;
   alt: string;
 }
 
-const ScrollingImageBelt: React.FC = () => {
+const ScrollingTextBelt: React.FC = () => {
   const beltRef = useRef<HTMLDivElement>(null);
   const [beltWidth, setBeltWidth] = useState(0);
 
@@ -15,63 +14,51 @@ const ScrollingImageBelt: React.FC = () => {
   const images: ImageItem[] = [
     {
       id: 1,
-      src: "/LSPD.png",
-      alt: "Custom image 1",
+      alt: "🚔 LSPD 🚔",
     },
     {
       id: 2,
-      src: "/ems.png",
-      alt: "Custom image 2",
+      alt: "🚑 EMS 🚑",
     },
     {
       id: 3,
-      src: "/doj.svg",
-      alt: "Custom image 3",
+      alt: "🔨 DOJ 🔨",
     },
     {
       id: 4,
-      src: "/LS_LOGO.png",
-      alt: "Custom image 4",
+      alt: "💀 GANGS 💀",
     },
     {
-      id: 1,
-      src: "/LSPD.png",
-      alt: "Custom image 1",
+      id: 5,
+      alt: "🚗 CARS 🚗",
     },
     {
-      id: 2,
-      src: "/ems.png",
-      alt: "Custom image 2",
+      id: 6,
+      alt: "📃 SCRIPTS 📃",
     },
     {
-      id: 3,
-      src: "/doj.svg",
-      alt: "Custom image 3",
+      id: 7,
+      alt: "📗 ROLEPLAY 📘",
     },
     {
-      id: 4,
-      src: "/LS_LOGO.png",
-      alt: "Custom image 4",
+      id: 8,
+      alt: "🚨 SCENES 🚨",
     },
     {
-      id: 1,
-      src: "/LSPD.png",
-      alt: "Custom image 1",
+      id: 9,
+      alt: "👷‍♂️ ACTIVE DEV 👷‍♂️",
     },
     {
-      id: 2,
-      src: "/ems.png",
-      alt: "Custom image 2",
+      id: 10,
+      alt: "👨‍👩‍👧‍👦 COMMUNITY 👨‍👩‍👦‍👦",
     },
     {
-      id: 3,
-      src: "/doj.svg",
-      alt: "Custom image 3",
+      id: 11,
+      alt: "🐱 PETS 🐶",
     },
     {
-      id: 4,
-      src: "/LS_LOGO.png",
-      alt: "Custom image 4",
+      id: 12,
+      alt: "👨‍🦯 ACCESSIBILE 🧏",
     },
   ];
 
@@ -116,7 +103,7 @@ const ScrollingImageBelt: React.FC = () => {
 
     let animationId: number;
     let position = 0;
-    const speed = 1; // Pixels per frame (adjust for speed)
+    const speed = 0.5; // Pixels per frame (adjust for speed)
 
     const scroll = () => {
       position -= speed;
@@ -139,12 +126,12 @@ const ScrollingImageBelt: React.FC = () => {
   }, [beltWidth]);
 
   return (
-    <div className="image-belt-container">
-      <div className="image-belt-wrapper">
-        <div ref={beltRef} className="image-belt">
+    <div className="text-belt-container">
+      <div className="text-belt-wrapper">
+        <div ref={beltRef} className="text-belt">
           {extendedImages.map((image, index) => (
-            <div key={`${image.id}-${index}`} className="image-item">
-              <img src={image.src} alt={image.alt} className="belt-image" />
+            <div key={`${image.id}-${index}`} className="text-item">
+              <p className="belt-text">{image.alt}</p>
             </div>
           ))}
         </div>
@@ -153,4 +140,4 @@ const ScrollingImageBelt: React.FC = () => {
   );
 };
 
-export default ScrollingImageBelt;
+export default ScrollingTextBelt;
