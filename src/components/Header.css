@@ -10,13 +10,13 @@
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
   border-radius: 200px;
-  width: 60%;
-  min-width: max-content; /* Ensures the header won't shrink below its content size */
-  max-width: 1440px;
+  width: auto; /* Changed from 60% to auto to adjust dynamically based on content */
+  min-width: 60%; /* Ensures a minimum width for the dark area */
   height: 5.5%;
-  min-height: 50px; /* Ensures a minimum height regardless of percentage */
   display: flex;
-  align-items: center;
+  align-items: center; /* Centers the nav content vertically */
+  padding-left: 2rem; /* Add padding to the left side of the header */
+  padding-right: 2rem; /* Add padding to the right side of the header */
 }
 
 .header.scrolled {
@@ -27,13 +27,12 @@
 /* Container Styles */
 .container {
   max-width: 1280px;
-  width: 100%; /* Ensures the container takes full width of the header */
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem; /* Moderate gap for balanced spacing */
+  gap: 4rem;
 }
 
 /* Logo Styles */
@@ -53,26 +52,22 @@
 nav {
   display: flex;
   align-items: center;
-  gap: 4rem; /* Increased gap for more space around logo */
-  flex-shrink: 0; /* Prevents the nav from shrinking */
-  width: 100%;
-  justify-content: center; /* Center align all elements */
+  gap: 4rem;
 }
 
 .nav-list {
   display: flex;
-  gap: 3rem; /* Reduced gap between nav items */
+  gap: 3rem;
   margin: 0;
   padding: 0;
-  flex-shrink: 0; /* Prevents the nav lists from shrinking */
 }
 
 .nav-list.left {
-  margin-right: 0; /* Remove auto margin to keep items closer */
+  margin-right: auto;
 }
 
 .nav-list.right {
-  margin-left: 0; /* Remove auto margin to keep items closer */
+  margin-left: auto;
 }
 
 .nav-item {
@@ -87,7 +82,6 @@ nav {
   position: relative;
   text-decoration: none;
   list-style-type: none;
-  white-space: nowrap; /* Prevents text from wrapping */
 }
 
 .nav-link:hover {
@@ -110,135 +104,32 @@ nav {
   transform: scaleX(1);
 }
 
-/* Mobile Menu Icon */
-.mobile-menu-icon {
-  display: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: #ffffff;
-}
-
-/* Mobile Menu Container */
-.mobile-nav-container {
-  display: none;
-}
-
-/* Media Queries */
-@media (max-width: 1024px) {
+/* Additional Mobile responsiveness */
+@media (max-width: 976px) {
   .header {
-    width: 80%; /* Wider header on tablets */
-  }
-
-  .nav-list {
-    gap: 2rem;
-  }
-
-  .logo img {
-    height: 120px;
-  }
-}
-
-@media (max-width: 768px) {
-  .header {
-    width: 70%; /* Wider header on small tablets/large phones */
-    padding: 0.5rem 1rem;
-    top: 1.5rem;
-    border-radius: 100px;
+    height: auto;
+    padding: 0.75rem;
   }
 
   .container {
-    padding: 0 1rem;
-    gap: 2rem;
+    gap: 1.5rem; /* Reduced gap to move nav closer to logo */
   }
 
   .nav-list {
-    gap: 1.5rem;
+    flex-direction: column; /* Stack the nav items */
+    gap: 1.3rem; /* Reduced gap between stacked items */
+    align-items: center; /* Center the items horizontally */
   }
 
   .nav-link {
-    font-size: 1rem;
+    font-size: 1rem; /* Smaller font size for mobile */
   }
 
   .logo img {
-    height: 80px;
-  }
-}
-
-@media (max-width: 640px) {
-  .header {
-    width: 95%;
-    top: 1rem;
-    min-height: 60px;
-    border-radius: 60px;
-    background: none;
-    backdrop-filter: none;
+    height: 100px;
   }
 
-  .header.scrolled {
-    background: none;
-    backdrop-filter: none;
-  }
-
-  /* Hide desktop nav and show mobile menu icon */
-  .nav-list {
-    display: none;
-  }
-
-  .mobile-menu-icon {
-    display: block;
-  }
-
-  /* Style for mobile hamburger menu */
-  .mobile-nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
-  .logo img {
-    height: 60px;
-    display: none;
-  }
-
-  /* Mobile nav when open */
-  .mobile-nav-open .mobile-nav {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 0;
-    z-index: 1001;
-  }
-
-  .mobile-nav {
-    display: none;
-  }
-
-  .mobile-nav-item {
-    padding: 0.75rem 0;
-    list-style-type: none;
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .mobile-nav-item:last-child {
-    border-bottom: none;
-  }
-
-  .mobile-nav-link {
-    color: #ffffff;
-    font-size: 1.2rem;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .mobile-nav-link:hover {
-    color: #5fb0e7;
+  nav {
+    gap: 1rem;
   }
 }

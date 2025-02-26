@@ -309,11 +309,15 @@ h3 {
   }
 
   .carousel-stage {
-    transform: translateY(-30px);
+    transform: translateY(-160px);
+  }
+
+  .card-overlay {
+    transform: translateY(24px) translateZ(100px);
   }
 
   .card-container {
-    max-width: 180px;
+    max-width: 220px;
   }
 
   .carousel-text {
