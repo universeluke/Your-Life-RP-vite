@@ -3,6 +3,9 @@
   overflow: hidden;
   background: linear-gradient(to right, #000000, rgb(15, 23, 50), #000000);
   padding-bottom: 0;
+  border: 10px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
+  transform: translateZ(100px);
 }
 
 .text-belt-wrapper {
@@ -31,7 +34,7 @@
   padding-left: 15px;
   padding-right: 15px;
   background-color: rgb(15, 21, 43);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0px 12px rgba(0, 0, 0, 0.5);
 }
 
 .belt-text {

@@ -21,20 +21,24 @@
 
 .carousel-container {
   width: 100%;
-  height: 20vh;
+  height: auto;
+  min-height: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   padding-top: 50px;
+  overflow: hidden;
 }
 
 .carousel-stage {
-  width: 960px; /* 20% larger from 800px */
-  height: 480px; /* 20% larger from 400px */
+  max-width: 960px;
+  width: 100%;
+  height: auto;
+  min-height: 480px;
   position: relative;
-  perspective: 3600px; /* Increased perspective for larger carousel */
-  transform: translateY(-100px);
+  perspective: 3600px;
+  transform: translateY(-200px);
 }
 
 .carousel-stage::before {
@@ -42,12 +46,6 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle at center,
-    rgba(78, 135, 226, 0.1) 0%,
-    rgba(14, 30, 83, 0.1) 50%,
-    transparent 70%
-  );
   filter: blur(40px);
   transform: scale(1.5);
   z-index: -1;
@@ -73,7 +71,7 @@
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transform: translateZ(-360px); /* 20% larger from 300px to match new radius */
+  transform: translateZ(-360px);
 }
 
 .carousel-card {
@@ -90,16 +88,17 @@
 
 .card-container {
   position: relative;
-  width: 307px; /* 20% larger from 256px */
-  height: 384px; /* 20% larger from 320px */
+  width: 100%;
+  max-width: 307px;
+  height: auto;
+  aspect-ratio: 307/384;
   margin: 0 auto;
   transform-style: preserve-3d;
-  min-height: 450px; /* 20% larger from 375px */
 }
 
 .card {
   width: 100%;
-  height: 100%;
+  height: 122.5%;
   position: relative;
   border-radius: 16px;
   overflow: hidden;
@@ -158,10 +157,10 @@
   position: absolute;
   width: 80%;
   text-align: center;
-  font-size: 28px; /* Increased from 23px in the second file */
+  font-size: 28px;
   left: 10%;
-  top: 48px; /* 20% larger from 40px */
-  transform: translateZ(120px); /* 20% larger from 100px */
+  top: 48px;
+  transform: translateZ(120px);
   opacity: 0;
   transition: opacity 0.8s ease-out;
   pointer-events: none;
@@ -191,13 +190,13 @@ h3 {
 
 .card-description {
   color: white;
-  font-size: 17px; /* Increased from 14px in the second file */
+  font-size: 17px;
   margin: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   pointer-events: none;
   max-width: 90%;
   overflow-wrap: break-word;
-  padding-top: 24px; /* 20% larger from 20px */
+  padding-top: 24px;
 }
 
 .carousel-text span {
@@ -211,22 +210,16 @@ h3 {
 
 .nav-button {
   position: relative;
-  font-size: 32px;
   padding: 16px 24px;
   background: none;
   border: none;
   color: white;
   cursor: pointer;
   z-index: 10;
-  transition: color 0.3s ease;
   top: 50%;
   transform: translateY(-50%);
-  height: 20%;
-  width: 2%;
-}
-
-.nav-button:hover {
-  color: #5fb0e7;
+  height: 60px;
+  width: 80px;
 }
 
 .nav-left {
@@ -247,9 +240,10 @@ h3 {
 }
 
 .card-img {
-  height: 420px; /* 20% larger from 350px */
-  width: 312px; /* 20% larger from 260px */
-  transform: translateX(-0px) translateY(-9px); /* Slightly adjusted for new size */
+  height: auto;
+  width: 100%;
+  max-width: 312px;
+  transform: translateX(-0px) translateY(-9px);
 }
 
 .card-overlay-inside {
@@ -257,10 +251,81 @@ h3 {
 }
 
 .icon-carousel {
-  width: 90px; /* 20% larger from 75px */
-  height: 90px; /* 20% larger from 75px */
-  margin-bottom: 10px; /* Slightly increased */
+  width: 90px;
+  height: 90px;
+  margin-bottom: 10px;
   color: white;
   filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
-  padding-bottom: 24px; /* 20% larger from 20px */
+  padding-bottom: 24px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .showcase-title {
+    font-size: 3rem;
+  }
+
+  .carousel-wrapper {
+    transform: translateZ(-240px);
+  }
+
+  .card-container {
+    max-width: 230px;
+  }
+
+  .carousel-stage {
+    transform: translateY(-200px);
+  }
+
+  .card-img {
+    height: auto;
+    width: 100%;
+  }
+
+  .carousel-text {
+    font-size: 20px;
+    top: 24px;
+  }
+
+  .icon-carousel {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card-overlay {
+    transform: translateY(20px) translateZ(100px);
+  }
+
+  .nav-button {
+    font-size: 24px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .showcase-container {
+    padding-top: 40px;
+    padding-bottom: 100px;
+  }
+
+  .carousel-stage {
+    transform: translateY(-30px);
+  }
+
+  .card-container {
+    max-width: 180px;
+  }
+
+  .carousel-text {
+    font-size: 16px;
+  }
+
+  .card-description {
+    font-size: 14px;
+  }
+
+  .icon-carousel {
+    width: 40px;
+    height: 40px;
+  }
 }

@@ -19,12 +19,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: radial-gradient(
-    circle at center,
-    rgba(78, 135, 226, 0.1) 0%,
-    rgba(14, 30, 83, 0.1) 50%,
-    transparent 70%
-  );
 }
 
 /* Title Styles */
