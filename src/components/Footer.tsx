@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="background-overlay"></div>
-      <div className="container">
+      <div className="footer-container">
         <div className="footer-content">
           <div>
             <a href="/">
