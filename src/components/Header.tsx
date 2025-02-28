@@ -22,7 +22,10 @@ const Header: React.FC = () => {
           <ul className="nav-list left">
             {leftNavItems.map((item) => (
               <li key={item} className="nav-item">
-                <a href={`#${item.toLowerCase()}`} className="nav-link">
+                <a
+                  href={item == "FEATURES" ? "#features" : "#showcase"}
+                  className="nav-link"
+                >
                   {item}
                   <span className="underline"></span>
                 </a>
@@ -42,7 +45,14 @@ const Header: React.FC = () => {
           <ul className="nav-list right">
             {rightNavItems.map((item) => (
               <li key={item} className="nav-item">
-                <a href={`#${item.toLowerCase()}`} className="nav-link">
+                <a
+                  href={
+                    item == "COMMUNITY"
+                      ? "#community"
+                      : "https://discord.gg/kMxqxmfFT6"
+                  }
+                  className="nav-link"
+                >
                   {item}
                   <span className="underline"></span>
                 </a>

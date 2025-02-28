@@ -62,7 +62,7 @@
 
 /* Step Card Styles */
 .step-card {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(31, 41, 55, 0.5);
   padding: 2rem;
   border-radius: 0.75rem;
   text-align: center;
@@ -71,9 +71,9 @@
 }
 
 .step-card:hover {
+  background-color: rgba(31, 41, 55, 0.7);
   transform: scale(1.05);
-  background-color: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Step Icon Styles */

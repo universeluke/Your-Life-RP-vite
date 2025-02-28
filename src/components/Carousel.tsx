@@ -122,7 +122,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="showcase-container">
+    <div id="showcase" className="showcase-container">
       <h1 className="showcase-title">Showcase</h1>
       <div className="carousel-container">
         <img

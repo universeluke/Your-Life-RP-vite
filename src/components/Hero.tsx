@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
         <p className="hero-subtitle">
           Experience the most intense GTA FiveM roleplay server
         </p>
-        <a href="#join" className="cta-button">
+        <a href="https://discord.gg/kMxqxmfFT6" className="cta-button">
           Start your new life
         </a>
       </div>
