@@ -1,11 +1,4 @@
 import React from "react";
-import {
-  Facebook,
-  Twitter,
-  DiscIcon as Discord,
-  Youtube,
-  Instagram,
-} from "lucide-react";
 import "./Footer.css"; // Import the CSS file for styling
 
 const Footer: React.FC = () => {
