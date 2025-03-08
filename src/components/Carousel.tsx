@@ -85,7 +85,7 @@ const Carousel = () => {
   const calculateCardPosition = (index: number) => {
     let adjustedIndex = index - activeIndex;
 
-    // Normalize the adjusted index to be within -2 to +2 range
+    // normalize the adjusted index to be within -2 to +2 range
     if (adjustedIndex < -2) {
       adjustedIndex += cards.length;
     } else if (adjustedIndex > 2) {
@@ -93,7 +93,7 @@ const Carousel = () => {
     }
 
     const theta = (adjustedIndex * 2 * Math.PI) / cards.length;
-    const radius = 360; // 20% larger from 300
+    const radius = 360;
 
     return {
       x: radius * Math.sin(theta),
@@ -103,7 +103,7 @@ const Carousel = () => {
     };
   };
 
-  // Function to render the icon based on its name
+  // render the icon because idk how else to do it :))))
   const renderIcon = (iconName: string) => {
     switch (iconName) {
       case "Landmark":

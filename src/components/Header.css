@@ -42,10 +42,11 @@
 }
 
 .logo img {
-  height: 150px;
+  height: 210px;
   width: auto;
   transition: all 0.3s ease;
   opacity: 90%;
+  padding-top: 18px;
 }
 
 /* Navigation Styles */
