@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Shield, Users, Briefcase, Map, Zap, Crosshair } from "lucide-react";
 import "./Features.css";
 
