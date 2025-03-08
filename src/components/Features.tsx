@@ -57,7 +57,7 @@ const hoverImages = [
 ];
 
 const Features = () => {
-  const featureCardsRef = useRef([]);
+  const featureCardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   // Function to get random rotation between -1.2 and 1.2 degrees
   const getRandomRotation = () => {
@@ -90,7 +90,9 @@ const Features = () => {
             <div
               key={index}
               className="feature-card"
-              ref={(el) => (featureCardsRef.current[index] = el)}
+              ref={(el) => {
+                featureCardsRef.current[index] = el;
+              }}
               onMouseEnter={(e) => {
                 const card = e.currentTarget;
                 const randomImage = getRandomImage();
