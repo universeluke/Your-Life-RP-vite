@@ -60,8 +60,7 @@
   padding: 1.5rem;
   border-radius: 0.75rem;
   text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  transition: all 0.2s ease;
   position: relative;
 }
 

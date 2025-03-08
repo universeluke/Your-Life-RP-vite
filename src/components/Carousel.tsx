@@ -23,7 +23,7 @@ const Carousel = () => {
 
   const cards: Card[] = [
     {
-      src: "/background1.png",
+      src: "/output.jpg",
       title: "Make your millions",
       description: "And create a custom garage from a wide range of cars",
       img: "/femalechar.png",
@@ -51,7 +51,7 @@ const Carousel = () => {
       icon: "Landmark",
     },
     {
-      src: "/background5.png",
+      src: "/background1.png",
       title: "Accessibility",
       description:
         "This city is for everyone, and our custom accessibility scripts help make this possible",

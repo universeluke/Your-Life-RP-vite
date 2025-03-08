@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Shield, Users, Briefcase, Map, Zap, Crosshair } from "lucide-react";
 import "./Features.css";
 
@@ -56,7 +56,9 @@ const hoverImages = [
   "/franklin.png",
 ];
 
-const Features: React.FC = () => {
+const Features = () => {
+  const featureCardsRef = useRef([]);
+
   // Function to get random rotation between -1.2 and 1.2 degrees
   const getRandomRotation = () => {
     const rotation = Math.random() * 2.4 - 1.2;
@@ -69,6 +71,16 @@ const Features: React.FC = () => {
     return hoverImages[randomIndex];
   };
 
+  // Initialize cards with random background images when component mounts
+  useEffect(() => {
+    featureCardsRef.current.forEach((card) => {
+      if (card) {
+        const randomImage = getRandomImage();
+        card.style.backgroundImage = `url(${randomImage})`;
+      }
+    });
+  }, []);
+
   return (
     <section id="features" className="features-section">
       <div className="container">
@@ -78,6 +90,7 @@ const Features: React.FC = () => {
             <div
               key={index}
               className="feature-card"
+              ref={(el) => (featureCardsRef.current[index] = el)}
               onMouseEnter={(e) => {
                 const card = e.currentTarget;
                 const randomImage = getRandomImage();
@@ -86,7 +99,9 @@ const Features: React.FC = () => {
               }}
               onMouseLeave={(e) => {
                 const card = e.currentTarget;
-                card.style.backgroundImage = "none";
+                // Generate a new random image on mouse leave instead of removing the background
+                const randomImage = getRandomImage();
+                card.style.backgroundImage = `url(${randomImage})`;
                 card.style.transform = "scale(1) rotate(0deg)";
               }}
             >

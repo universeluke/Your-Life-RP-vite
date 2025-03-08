@@ -2,7 +2,7 @@
 .showcase-container {
   width: 100%;
   min-height: 60vh;
-  background: linear-gradient(to right, #120012, rgb(17, 27, 59), #120012);
+  background: linear-gradient(to right, #240024, rgb(14, 11, 41), #240024);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,7 +100,7 @@
   width: 100%;
   height: 122.5%;
   position: relative;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transform-style: preserve-3d;
@@ -113,8 +113,12 @@
   width: 100%;
   height: 100%;
   transition: transform 0.2s ease;
-  object-fit: cover;
-  animation: pulse 20s ease-in-out infinite;
+  object-fit: fill;
+  position: absolute;
+  top: 0;
+  left: 0%;
+  right: 0;
+  bottom: 0;
 }
 
 .carousel-card.active.hovered .card {
