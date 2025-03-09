@@ -3,7 +3,7 @@
 /* Section Styles */
 .join-section {
   padding: 5rem 0;
-  background: linear-gradient(to right, #000000, rgb(7, 11, 23), #000000);
+  background: linear-gradient(to right, #240024, rgb(14, 11, 41), #240024);
   position: relative;
 }
 
@@ -67,7 +67,7 @@
   border-radius: 0.75rem;
   text-align: center;
   transition: transform 0.3s ease, background-color 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.2s ease;
 }
 
 .step-card:hover {

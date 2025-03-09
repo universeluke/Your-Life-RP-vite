@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
       <div ref={backgroundRef} className="parallax-background"></div>
       <div ref={foregroundRef} className="parallax-foreground">
         <img
-          src="/gtaforeground.png"
+          src="/parallax2.png"
           alt="Hills Foreground"
           width={1920} // Set to your image's actual width
           height={1080} // Set to your image's actual height

@@ -2,10 +2,12 @@
 
 /* General Footer Styles */
 .footer {
-  background-image: url("/gta.jpg");
+  background-image: url("/footer.png");
   padding: 2rem 0;
   position: relative;
-  border-top: solid rgb(25, 26, 32) 3px;
+  /* Add this for the hot pink glow effect */
+  border-top: 2px solid #ff28d0;
+  box-shadow: 0 -10px 20px rgba(255, 39, 154, 0.6);
 }
 
 .footer-container {

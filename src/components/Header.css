@@ -44,9 +44,13 @@
 .logo img {
   height: 210px;
   width: auto;
-  transition: all 0.3s ease;
+  transition: 0.2s ease;
   opacity: 90%;
   padding-top: 18px;
+}
+
+.logo :hover {
+  scale: 107%;
 }
 
 /* Navigation Styles */

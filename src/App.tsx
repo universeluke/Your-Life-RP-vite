@@ -7,18 +7,20 @@ import Footer from "./components/Footer";
 import Carousel from "./components/Carousel";
 import ScrollingImageBelt from "./components/ScrollingImageBelt";
 import ScrollingTextBelt from "./components/ScrollingTextBelt";
+import Beam from "./components/Beam";
 
 function App() {
   return (
     <div className="relative z-10">
       <Header />
       <Hero />
+      <Beam />
       <Features />
       <Carousel />
       <ScrollingImageBelt />
       <ScrollingTextBelt />
       <Community />
-      <JoinNow />
+      {/* <JoinNow /> */}
       <Footer />
     </div>
   );

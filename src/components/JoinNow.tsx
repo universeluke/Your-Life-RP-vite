@@ -1,4 +1,4 @@
-import { ArrowRight, Download, MessageCircle, PlayCircle } from "lucide-react";
+import { Download, MessageCircle, PlayCircle } from "lucide-react";
 import "./JoinNow.css";
 
 const JoinNow: React.FC = () => {
@@ -7,14 +7,6 @@ const JoinNow: React.FC = () => {
       <div className="overlay"></div>
       <div className="container">
         <h2 className="title">Ready to Start Your New Life?</h2>
-        <p className="description">
-          Join Your Life RP today and experience the most intense GTA FiveM
-          server!
-        </p>
-        <a href="#" className="cta-button">
-          Connect Now
-          <ArrowRight className="arrow-icon" />
-        </a>
         <div className="steps-container">
           <div className="step-card">
             <Download className="step-icon blue" />
