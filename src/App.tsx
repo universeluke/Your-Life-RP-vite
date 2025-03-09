@@ -15,11 +15,11 @@ function App() {
       <Header />
       <Hero />
       <Beam />
-      <Features />
-      <Carousel />
+      <Community />
       <ScrollingImageBelt />
       <ScrollingTextBelt />
-      <Community />
+      <Carousel />
+      <Features />
       {/* <JoinNow /> */}
       <Footer />
     </div>
